@@ -1,0 +1,66 @@
+<ul class="nav flex-column nav-pills">
+  <li class="nav-item" *ngIf="!isAuthenticated">
+    <a class="nav-link" routerLink="/auth" routerLinkActive="active"
+      >Autentificacion</a
+    >
+  </li>
+  <li class="nav-item" *ngIf="isAuthenticated">
+    <a class="nav-link" href="#" (click)="onLogout($event)" routerLinkActive="active"
+      >Salir</a
+    >
+  </li>
+
+  <div *ngIf="isAuthenticated">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Tema</a
+      >
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" routerLink="/users" routerLinkActive="active"
+        >Usuario</a
+      >
+    </li> -->
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/categories']"
+        routerLinkActive="active"
+        >Categoria</a
+      >
+    </li>
+    <!-- <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/templateform']"
+        routerLinkActive="active"
+        >Formulario de registro</a
+      >
+    </li> -->
+    <!-- <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/reactiveform']"
+        routerLinkActive="active"
+        >Formulario Reactivo</a
+      >
+    </li> -->
+    <!-- <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/filterpipes']"
+        routerLinkActive="active"
+        >Filtrar usuario</a
+      >
+    </li> -->
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/posts']" routerLinkActive="active"
+        >Foro</a
+      >
+    </li>
+  </div>
+</ul>
